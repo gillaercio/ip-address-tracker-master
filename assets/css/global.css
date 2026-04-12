@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/rubik-v31-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/rubik-v31-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Rubik';
+  font-style: oblique;
+  font-weight: 700;
+  src: url('../fonts/rubik-v31-latin-700.woff2') format('woff2');
+}
+
+:root {
+  --Gray-950: hsl(0, 0%, 17%);
+  --Gray-400: hsl(0, 0%, 58%);
+  --White: hsl(0, 0%, 100%);
+
+  --rubik: 'Rubik', sans-serif;
+
+  --text-info: 700 1.1rem/120% var(--rubik);
+  --text-input: 1.8rem/120% var(--rubik);
+  --text-base: 500 2rem/120% var(--rubik);
+  --text-h1: 500 2.6rem/120% var(--rubik);
+}
+
+/*
+
+Elemento: Título "IP Address Tracker"
+Mobile: ~24px (--text-2xl)
+Desktop: ~24-30px (--text-2xl ou --text-3xl)
+Observação: Similar ou ligeiramente maior
+			
+Labels (IP ADDRESS, LOCATION, etc.)
+~10-11px
+~10-11px
+Pequenas, uppercase, espaçadas
+
+Valores principais (endereço IP, localização)
+~20px (--text-xl)
+~24-26px (--text-2xl)
+Maiores no desktop
+
+Input placeholder
+~14-16px (--text-sm/base)
+~14-16px (--text-sm/base)
+*/
