@@ -42,7 +42,8 @@ html {
   --rubik: 'Rubik', sans-serif;
 
   --text-info: 700 1.1rem/120% var(--rubik);
-  --text-input: 1.8rem/120% var(--rubik);
+  --text-input: 1.4rem/120% var(--rubik);
+  --text-input-desktop: 1.8rem/120% var(--rubik);
   --text-base: 500 2rem/120% var(--rubik);
   --text-h1: 500 2.6rem/120% var(--rubik);
 }
