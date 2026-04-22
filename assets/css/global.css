@@ -38,6 +38,7 @@ html {
   --Gray-950: hsl(0, 0%, 17%);
   --Gray-400: hsl(0, 0%, 58%);
   --White: hsl(0, 0%, 100%);
+  --Black: hsl(0, 0%, 0%);
 
   --rubik: 'Rubik', sans-serif;
 
