@@ -1,4 +1,3 @@
-//config
 const API_KEY = "at_nrbpYbpts8ZE4iwQH5saBaw5B1bX1";
 const BASE_URL = "https://geo.ipify.org/api/v2/country,city";
 
@@ -7,7 +6,7 @@ function isIP(value) {
 
   return ipRegex.test(value);
 }
-//elementos DOM
+
 const ui = {
   ip: document.getElementById("ip"),
   location: document.getElementById("location"),
@@ -17,15 +16,21 @@ const ui = {
 
 const form = document.querySelector(".header__search");
 const input = document.getElementById("ip-input");
-//mapa (Leaflet)
+
 let map = L.map("map").setView([0, 0], 13);
 
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "&copy; OpenStreetMap contributors",
 }).addTo(map);
 
-let marker = L.marker([0, 0]).addTo(map);
-// função principal
+const customIcon = L.icon({
+  iconUrl: "assets/images/icon-location.svg",
+  iconSize: [40, 50],
+  iconAnchor: [20, 50],
+});
+
+let marker = L.marker([0, 0], {icon: customIcon}).addTo(map);
+
 async function fetchIPData(query = "") {
   try {
     setLoading(true);
@@ -51,32 +56,32 @@ async function fetchIPData(query = "") {
     updateUI(data);
     updateMap(data.location.lat, data.location.lng);
   } catch (error) {
-    alert("Error: invalid IP or domain");
+    ui.ip.textContent = "Invalid input";
   } finally {
     setLoading(false);
   }
 }
-//atualizar UI
+
 function updateUI(data) {
   ui.ip.textContent = data.ip;
   ui.location.textContent = `${data.location.city}, ${data.location.region}`;
   ui.timezone.textContent = `UTC ${data.location.timezone}`;
   ui.isp.textContent = data.isp;
 }
-//atualizar mapa
+
 function updateMap(lat, lng) {
   map.setView([lat, lng], 13);
   marker.setLatLng([lat, lng]);
 }
-//carregamento
+
 function setLoading(isLoading) {
   const value = isLoading ? "Loading..." : "--";
 
-  Object.values(ui).forEach((el) => {
-    if (isLoading) el.textContent = value;
-  });
+  if (isLoading) {
+    Object.values(ui).forEach(el => el.textContent = "Loading...");
+  }
 }
-//evento do form
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -87,5 +92,5 @@ form.addEventListener("submit", (e) => {
   fetchIPData(value);
   input.value = "";
 });
-//inicialização
+
 fetchIPData();
