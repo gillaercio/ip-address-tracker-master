@@ -1,6 +1,6 @@
 # Frontend Mentor - IP address tracker
 
-This is a solution to the [ip-address-tracker-master on Frontend Mentor](https://github.com/gillaercio/ip-address-tracker-master). Frontend Mentor challenges help you improve your coding skills by building realistic projects
+This is a solution to the [ip-address-tracker-master on Frontend Mentor](https://github.com/gillaercio/ip-address-tracker-master/tree/master). Frontend Mentor challenges help you improve your coding skills by building realistic projects
 
 ## Table of contents
 
@@ -33,7 +33,7 @@ These are my screenshots showing how the project turned out.
 
 ### Links
 
-- Solution URL: [My Solution](https://github.com/gillaercio/ip-address-tracker-master)
+- Solution URL: [My Solution](https://github.com/gillaercio/ip-address-tracker-master/tree/master)
 
 ## My process
 
